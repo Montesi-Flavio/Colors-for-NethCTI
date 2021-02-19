@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="test.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <title>BG Pagina</title>
+</head>
+    <body>
+
+    <div id="app" v-bind:style="{ background: color0}" >
+        <div id="Tab" class="ui centered aligned container">            
+                <div>
+                    <h1>Try a color</h1>
+
+                    <div class="color">
+                            <input type="text" v-bind:style="{ color: 'black' }" v-model="color" maxlength="7" placeholder="#673AB7"/>
+                            <input type="text" v-bind:style="{ color: 'black' }" v-model="color1" maxlength="7" placeholder="#FFFFFF"/> 
+                            <input type="text" v-bind:style="{ color: 'black' }" v-model="color2" maxlength="7" placeholder="#FFFFFF"/> 
+                            <input class="color" type="color" v-model="color0"/> 
+                    </div>
+
+                    <br>
+                    <br>
+                    
+                <div>
+                    <div v-for="colorObj in colors">
+                        <div
+                            v-if="colorObj.colors.length == 2"
+                            class="column"
+                            v-on:click="setColor(colorObj.colors)"
+                            :style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ')', width: '100px', height: '100px'}">
+                           
+                        </div>
+                         <div
+                            v-if="colorObj.colors.length == 3"
+                            class="column"
+                            v-on:click="setColor(colorObj.colors)"
+                            :style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ', ' + colorObj.colors[2] + ')', width: '100px', height: '100px'}">
+                        </div>
+                          <div
+                          
+                           v-if="colorObj.colors.length == 4"
+                           class="column"
+                            v-on:click="setColor(colorObj.colors)"
+                            :style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ', ' + colorObj.colors[2] + ', ' + colorObj.colors[3] + ')', width: '100px', height: '100px'}">
+                             
+                        </div>
+                        <div
+                       
+                            v-if="colorObj.colors.length == 5"
+                            class="column"
+                            v-on:click="setColor(colorObj.colors)"
+                            :style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ', ' +colorObj.colors[2] + ', ' + colorObj.colors[3] + ', ' +colorObj.colors[4] + ')', width: '100px', height: '100px'}">
+                              
+                        </div> 
+                    </div>
+
+                </div>
+            </table>
+            
+            </div>
+        </div>
+    </div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" 
+        crossorigin="anonymous"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="test.js"></script>
+    </body>
+</html>

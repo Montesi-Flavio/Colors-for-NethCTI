@@ -1,0 +1,67 @@
+<html>
+    <head>
+
+        <title>Angular colors</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="Ang.css">
+        
+    </head>
+
+<body ng-app="app">
+    <div id="app"ng-controller="controller" ng-style="{'background': color0 }">
+        
+        <div id="Tab"  class="ui centered align container" > 
+            <div >
+                <h1 >Try a color</h1>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div
+            id="div1"
+            class="ui rounded button middle aligned"
+            ng-click="resetLocalStorage()"> <p> DEFAULT</p>
+         </div>
+            <div ng-repeat="colorObj in colors">
+                <button
+                    id="div"
+                    class="ui rounded button"
+                    ng-if="colorObj.colors.length == 2"
+                    ng-click="setColor(colorObj.colors)"
+                    ng-style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ')'}">
+                </button>
+                <button
+                    id="div"
+                    class="ui rounded button"
+                    ng-if="colorObj.colors.length == 3"
+                    ng-click="setColor(colorObj.colors)"
+                    ng-style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ', ' + colorObj.colors[2] + ')'}">
+                </button>
+                <button
+                    id="div"     
+                    class="ui rounded button"   
+                    ng-if="colorObj.colors.length == 4"
+                    ng-click="setColor(colorObj.colors)"
+                    ng-style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ', ' + colorObj.colors[2] + ', ' + colorObj.colors[3] + ')'}">
+                                
+                </button>
+                <button
+                    id="div"
+                    class="ui rounded button"
+                    ng-if="colorObj.colors.length == 5"
+                    ng-click="setColor(colorObj.colors)"
+                    ng-style="{background: 'linear-gradient(to right,' + colorObj.colors[0] + ', ' + colorObj.colors[1] + ', ' +colorObj.colors[2] + ', ' + colorObj.colors[3] + ', ' +colorObj.colors[4] + ')'}">
+                                
+                </button> 
+            </div>
+        </div>
+    </div>
+ 
+
+        <script src="Ang.js"></script> 
+        
+</body>
+
+</html>
